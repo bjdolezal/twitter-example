@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Twitter</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Twitter</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <h1>Twitter</h1>
 
-<%= yield %>
+    <% [["About", about_path], ["Careers", careers_path], ["Contact Us", contact_path]].each do |definition| %>
+      <%= link_to definition[0], definition[1] %>
+       - 
+    <% end %>
 
-</body>
+    <hr/>
+
+    <!-- Injects here from your view -->
+    <%= yield %>
+
+  </body>
 </html>
