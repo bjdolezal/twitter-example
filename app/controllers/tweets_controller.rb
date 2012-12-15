@@ -1,3 +1,6 @@
+# ================================================
+# CONTROLLER =====================================
+# ================================================
 class TweetsController < ApplicationController
   def new
   end
@@ -14,6 +17,8 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @tweets = Tweet.search_via_message("Test")
+    @tweet = @tweets.first
   end
 
   def list
