@@ -1,4 +1,12 @@
 Twitter::Application.routes.draw do
+  get "tweets/new"
+
+  get "tweets/create"
+
+  get "tweets/show"
+
+  get "tweets/list"
+
   devise_for :users
 
   get "pages/index"
