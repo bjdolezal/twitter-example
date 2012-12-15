@@ -9,6 +9,14 @@
   <body>
     <h1>Twitter</h1>
 
+    <% if user_signed_in? %>
+      <%= link_to tweets_new_path do %>
+        <button>Compose Tweet</button>
+        <br/>
+        <br/>
+      <% end %>
+    <% end %>
+
     <% [["About", about_path], ["Careers", careers_path], ["Contact Us", contact_path]].each do |definition| %>
       <%= link_to definition[0], definition[1] %>
 

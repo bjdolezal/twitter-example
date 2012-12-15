@@ -1,11 +1,9 @@
 Twitter::Application.routes.draw do
   get "tweets/new"
-
-  get "tweets/create"
-
   get "tweets/show"
-
   get "tweets/list"
+  delete "tweets/delete"
+  post "tweets/create"
 
   devise_for :users
 

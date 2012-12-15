@@ -1,2 +1,10 @@
-<h1>Tweets#list</h1>
-<p>Find me in app/views/tweets/list.html.erb</p>
+<% @tweets.each do |tweet| %>
+  <b><%= tweet.user.email %></b>
+  <br/>
+  <%= tweet.created_at %>
+  <br/>
+  <%= tweet.message %>
+  <br/>
+  <%= link_to "Delete", tweets_delete_path(tweet), :method => :delete %>
+  <hr/>
+<% end %>
