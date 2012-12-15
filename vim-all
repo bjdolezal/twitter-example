@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+vim Gemfile Guardfile `find ./ -iname '*.rb' | grep -v vendor | grep -v activesupport` `find ./ -iname '*.erb' | grep -v vendor` `find ./app/assets -iname '*.scss'` `find ./ -iname '*.less'` `find ./ -iname '*.yml' | grep -v vendor | grep -v activesupport` `find ./ -iname '*.js' | grep -v vendor` `find ./ -iname '*.css'` `find ./ -iname '*.feature'`
