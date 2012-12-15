@@ -11,7 +11,18 @@
 
     <% [["About", about_path], ["Careers", careers_path], ["Contact Us", contact_path]].each do |definition| %>
       <%= link_to definition[0], definition[1] %>
-       - 
+
+      &nbsp;
+      &nbsp;
+      &nbsp;
+
+    <% end %>
+
+    <!-- User Controls -->
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path %>
     <% end %>
 
     <hr/>
